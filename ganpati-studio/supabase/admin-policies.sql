@@ -1,0 +1,1 @@
+create policy "Admins can manage products" on public.products for all to authenticated using ((auth.jwt() -> 'user_metadata' ->> 'role') = 'admin') with check ((auth.jwt() -> 'user_metadata' ->> 'role') = 'admin');
