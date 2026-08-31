@@ -30,6 +30,7 @@ const portfolio = [
 ];
 
 export default function Home() {
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
   return (
     <main className="min-h-screen bg-[#080808] text-white">
       {/* NAVBAR */}
@@ -424,7 +425,7 @@ export default function Home() {
 
       {/* WHATSAPP */}
       <a
-        href="https://wa.me/"
+        href={whatsappNumber ? `https://wa.me/${whatsappNumber}` : "/contact"}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contact Ganpati Studio on WhatsApp"
